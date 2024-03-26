@@ -15,13 +15,13 @@
 #include "constants.h"
 #include "error_codes.h"
 
- /**
-  * @struct MatrixElement
-  * @brief Represents an element of the matrix.
-  *
-  * Each element contains its integer value, its current column, and a pointer
-  * to the next element in the same row.
-  */
+/**
+ * @struct MatrixElement
+ * @brief Represents an element of the matrix.
+ *
+ * Each element contains its integer value, its current column, and a pointer
+ * to the next element in the same row.
+ */
 typedef struct MatrixElement {
   int value;                      // Element value as integer
   int column;                     // Current column
@@ -44,8 +44,8 @@ typedef struct MatrixRowNode {
  * @struct Matrix
  * @brief A matrix.
  *
- * The matrix contains the `head`, which is a pointer to the first row of the matrix,
- * and the size of the matrix.
+ * The matrix contains the `head`, which is a pointer to the first row of the
+ * matrix, and the size of the matrix.
  */
 typedef struct Matrix {
   MatrixRowNode* head;  // Pointer to first row of matrix

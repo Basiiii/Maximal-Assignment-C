@@ -21,15 +21,15 @@
 #include "constants.h"
 #include "error_codes.h"
 
- /**
-  * @brief Swap the value of an element at a given position in the matrix.
-  * @param matrix - The matrix containing the element.
-  * @param row    - The row of the matrix where the element is.
-  * @param col    - The column of the matrix where the element is.
-  * @param value  - The new value to place in the element.
-  * @retval `OUT_OF_BOUNDS` - Invalid matrix position.
-  * @retval `SUCCESS`       - Operation successful.
-  */
+/**
+ * @brief Swap the value of an element at a given position in the matrix.
+ * @param matrix - The matrix containing the element.
+ * @param row    - The row of the matrix where the element is.
+ * @param col    - The column of the matrix where the element is.
+ * @param value  - The new value to place in the element.
+ * @retval `OUT_OF_BOUNDS` - Invalid matrix position.
+ * @retval `SUCCESS`       - Operation successful.
+ */
 int ReplaceValueAtPosition(Matrix* matrix, int row, int col, int value) {
   // Check if position is valid
   if (row < 0 || row >= matrix->height || col < 0 || col >= matrix->width) {
@@ -63,7 +63,7 @@ int ReplaceValueAtPosition(Matrix* matrix, int row, int col, int value) {
 MatrixElement* CreateMatrixElement(int value, int column) {
   MatrixElement* newElement = (MatrixElement*)malloc(sizeof(MatrixElement));
   if (newElement == NULL) {
-    return NULL; // Memory allocation error
+    return NULL;  // Memory allocation error
   }
   newElement->value = value;
   newElement->column = column;
@@ -100,8 +100,7 @@ MatrixElement* InitializeRow(int width) {
     if (head == NULL) {
       head = newElement;
     } else {
-      currentElement->nextCol =
-          newElement;
+      currentElement->nextCol = newElement;
     }
     currentElement = newElement;
   }

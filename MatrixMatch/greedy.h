@@ -12,18 +12,19 @@
 
 #include "matrix_core.h"
 
- /**
-  * @brief  Solve the problem with a "Greedy" algorithm.
-  * @param  matrix               - The matrix.
-  * @param  maxSum               - Pointer to store the maximum sum.
-  * @param  maxSelection         - Pointer to store the number of selected elements.
-  * @param  currentSelectionSize - Pointer to store the selected elements.
-  * @retval `INVALID_MATRIX_OR_INDICES` - The matrix or the provided indices are
-  *                                       invalid.
-  * @retval `MEMORY_ALLOCATION_FAILURE` - Memory allocation failure for the new
-  *                                       matrix element.
-  * @retval `SUCCESS`                    - Operation successful.
-  */
+/**
+ * @brief  Solve the problem with a "Greedy" algorithm.
+ * @param  matrix               - The matrix.
+ * @param  maxSum               - Pointer to store the maximum sum.
+ * @param  maxSelection         - Pointer to store the number of selected
+ * elements.
+ * @param  currentSelectionSize - Pointer to store the selected elements.
+ * @retval `INVALID_MATRIX_OR_INDICES` - The matrix or the provided indices are
+ *                                       invalid.
+ * @retval `MEMORY_ALLOCATION_FAILURE` - Memory allocation failure for the new
+ *                                       matrix element.
+ * @retval `SUCCESS`                    - Operation successful.
+ */
 __declspec(dllexport) int GreedyAlgorithm(Matrix* matrix, int* maxSum,
                                           int* maxSelection,
                                           int* currentSelectionSize);

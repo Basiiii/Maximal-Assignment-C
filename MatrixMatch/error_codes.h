@@ -20,8 +20,8 @@
 #define INVALID_MATRIX_OR_INDICES -4  // Invalid matrix or matrix indices
 #define CANNOT_OPEN_FILE -5           // Unable to open the file
 #define FILE_READ_ERROR -6            // File read error
-#define UNABLE_REPLACE_VALUE -7       // Unable to replace the value of an element
-#define OUT_OF_BOUNDS -8              // Position is out of bounds of the matrix
-#define NULL_POINTER -9               // Pointer is NULL
+#define UNABLE_REPLACE_VALUE -7  // Unable to replace the value of an element
+#define OUT_OF_BOUNDS -8         // Position is out of bounds of the matrix
+#define NULL_POINTER -9          // Pointer is NULL
 
 #endif  // !ERROR_CODES_H

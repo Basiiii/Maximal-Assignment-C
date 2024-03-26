@@ -61,9 +61,12 @@ static void DestroyZero(Zero* zero) { free(zero); }
 
 /**
  * @brief Checks if a specific cell in the matrix is covered.
- * @param zero        - Pointer to the structure representing the zero to be checked.
- * @param coveredRows - Pointer to an array of integers indicating which rows are covered (assigned).
- * @param coveredCols - Pointer to an array of integers indicating which columns are covered (assigned).
+ * @param zero        - Pointer to the structure representing the zero to be
+ checked.
+ * @param coveredRows - Pointer to an array of integers indicating which rows
+ are covered (assigned).
+ * @param coveredCols - Pointer to an array of integers indicating which columns
+ are covered (assigned).
  * @retval `true` if the cell is covered, `false` otherwise.
  */
 static bool IsCovered(static Zero* zero, int* coveredRows, int* coveredCols) {
@@ -71,10 +74,14 @@ static bool IsCovered(static Zero* zero, int* coveredRows, int* coveredCols) {
 }
 
 /**
- * @brief Marks a specific element in the matrix as covered, updating the arrays of covered rows and columns.
- * @param zero        - Pointer to the structure representing the zero to be covered.
- * @param coveredRows - Pointer to an array of integers indicating which rows are covered (assigned).
- * @param coveredCols - Pointer to an array of integers indicating which columns are covered (assigned).
+ * @brief Marks a specific element in the matrix as covered, updating the arrays
+ * of covered rows and columns.
+ * @param zero        - Pointer to the structure representing the zero to be
+ * covered.
+ * @param coveredRows - Pointer to an array of integers indicating which rows
+ * are covered (assigned).
+ * @param coveredCols - Pointer to an array of integers indicating which columns
+ * are covered (assigned).
  */
 static void CoverZero(static Zero* zero, int* coveredRows, int* coveredCols) {
   coveredRows[zero->row] = 1;
@@ -101,7 +108,8 @@ static int CountZeros(Matrix* matrix) {
 }
 
 /**
- * @brief Inverts the sign of all elements in the matrix, turning positive values into negative and vice versa.
+ * @brief Inverts the sign of all elements in the matrix, turning positive
+ * values into negative and vice versa.
  * @param matrix - Pointer to the matrix representing the problem.
  */
 static void NegateAllElements(Matrix* matrix) {
@@ -115,7 +123,8 @@ static void NegateAllElements(Matrix* matrix) {
 }
 
 /**
- * @brief Makes all values in the matrix non-negative by subtracting the minimum value of the matrix from all elements.
+ * @brief Makes all values in the matrix non-negative by subtracting the minimum
+ * value of the matrix from all elements.
  * @param matrix - Pointer to the matrix representing the problem.
  */
 static void MakeMatrixNonnegative(Matrix* matrix) {
@@ -139,7 +148,8 @@ static void MakeMatrixNonnegative(Matrix* matrix) {
 }
 
 /**
- * @brief Subtracts the minimum value of each row from all elements in the same row, making all values positive.
+ * @brief Subtracts the minimum value of each row from all elements in the same
+ * row, making all values positive.
  * @param matrix - Pointer to the matrix representing the problem.
  */
 static void SubtractRowMinima(Matrix* matrix) {
@@ -158,7 +168,8 @@ static void SubtractRowMinima(Matrix* matrix) {
 }
 
 /**
- * @brief Subtracts the minimum value of each column from all elements in the same column, making all values positive.
+ * @brief Subtracts the minimum value of each column from all elements in the
+ * same column, making all values positive.
  * @param matrix - Pointer to the matrix representing the problem.
  */
 static void SubtractColumnMinima(Matrix* matrix) {
@@ -184,7 +195,8 @@ static void SubtractColumnMinima(Matrix* matrix) {
 }
 
 /**
- * @brief Checks if the current solution is optimal, i.e., if all rows and columns of the matrix are covered.
+ * @brief Checks if the current solution is optimal, i.e., if all rows and
+ * columns of the matrix are covered.
  * @param matrix - Pointer to the matrix representing the problem.
  * @retval `true` if the current solution is optimal, `false` otherwise.
  */
@@ -232,8 +244,10 @@ static bool IsOptimalSolution(Matrix* matrix) {
 
 /**
  * @brief Prints the coverage status of rows and columns in the matrix.
- * @param coveredRows    - Pointer to an array of booleans indicating which rows are covered (assigned).
- * @param coveredCols    - Pointer to an array of booleans indicating which columns are covered (assigned).
+ * @param coveredRows    - Pointer to an array of booleans indicating which rows
+ * are covered (assigned).
+ * @param coveredCols    - Pointer to an array of booleans indicating which
+ * columns are covered (assigned).
  * @param numRows        - Number of rows in the matrix.
  * @param numCols        - Number of columns in the matrix.
  */
@@ -252,9 +266,12 @@ static void PrintCoveredStatus(bool* coveredRows, bool* coveredCols,
 }
 
 /**
- * @brief Prints the covered matrix, indicating which rows and columns are covered.
- * @param coveredRows    - Pointer to an array of booleans indicating which rows are covered (assigned).
- * @param coveredCols    - Pointer to an array of booleans indicating which columns are covered (assigned).
+ * @brief Prints the covered matrix, indicating which rows and columns are
+ * covered.
+ * @param coveredRows    - Pointer to an array of booleans indicating which rows
+ * are covered (assigned).
+ * @param coveredCols    - Pointer to an array of booleans indicating which
+ * columns are covered (assigned).
  * @param numRows        - Number of rows in the matrix.
  * @param numCols        - Number of columns in the matrix.
  */
@@ -273,11 +290,13 @@ static void PrintCoveredMatrix(bool* coveredRows, bool* coveredCols,
 }
 
 /**
- * @brief Covers zeros in the matrix, identifying if there are multiple zeros in the same
- *        row or column.
+ * @brief Covers zeros in the matrix, identifying if there are multiple zeros in
+ * the same row or column.
  * @param matrix         - Pointer to the matrix representing the problem.
- * @param coveredRows    - Pointer to an array of booleans indicating which rows are covered (assigned).
- * @param coveredCols    - Pointer to an array of booleans indicating which columns are covered (assigned).
+ * @param coveredRows    - Pointer to an array of booleans indicating which rows
+ * are covered (assigned).
+ * @param coveredCols    - Pointer to an array of booleans indicating which
+ * columns are covered (assigned).
  */
 static void CoverZeros(Matrix* matrix, bool** coveredRows, bool** coveredCols) {
   int numRows = matrix->height;
@@ -319,8 +338,7 @@ static void CoverZeros(Matrix* matrix, bool** coveredRows, bool** coveredCols) {
         // If there are more zeros in the same row, cover the row
         else if (multipleZerosInRow) {
           (*coveredRows)[row] = true;
-        }
-        else {
+        } else {
           // If there is only one zero, do not cover the row or column
         }
       }
@@ -329,11 +347,13 @@ static void CoverZeros(Matrix* matrix, bool** coveredRows, bool** coveredCols) {
 }
 
 /**
- * @brief Creates additional zeros in the matrix, adjusting the values of the elements
- *        to ensure the existence of a zero in each row and column.
+ * @brief Creates additional zeros in the matrix, adjusting the values of the
+ * elements to ensure the existence of a zero in each row and column.
  * @param matrix         - Pointer to the matrix representing the problem.
- * @param coveredRows    - Pointer to an array of booleans indicating which rows are covered (assigned).
- * @param coveredCols    - Pointer to an array of booleans indicating which columns are covered (assigned).
+ * @param coveredRows    - Pointer to an array of booleans indicating which rows
+ * are covered (assigned).
+ * @param coveredCols    - Pointer to an array of booleans indicating which
+ * columns are covered (assigned).
  */
 static void CreateAdditionalZeros(Matrix* matrix, bool* coveredRows,
                                   bool* coveredCols) {
@@ -376,7 +396,7 @@ static void CreateAdditionalZeros(Matrix* matrix, bool* coveredRows,
 /**
  * @brief Creates a copy of the provided matrix.
  * @param originalMatrix - Pointer to the original matrix to be copied.
- * @retval Pointer to the new copied matrix, or NULL in case of memory 
+ * @retval Pointer to the new copied matrix, or NULL in case of memory
            allocation failure.
  */
 static Matrix* CopyMatrix(Matrix* originalMatrix) {
@@ -488,7 +508,8 @@ static int ExtractFinalSolution(Matrix* originalMatrix, Matrix* finalMatrix,
 }
 
 /**
- * @brief Implements the Hungarian algorithm to find the solution to the problem.
+ * @brief Implements the Hungarian algorithm to find the solution to the
+ * problem.
  * @param matrix         - Pointer to the input matrix.
  * @param chosenElements - Pointer to a pointer of integers, which will be
  *                         allocated and filled with the chosen elements.

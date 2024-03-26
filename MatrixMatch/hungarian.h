@@ -22,7 +22,8 @@ typedef struct Zero {
 } Zero;
 
 /**
- * @brief Implements the Hungarian algorithm to find the solution to the problem.
+ * @brief Implements the Hungarian algorithm to find the solution to the
+ * problem.
  * @param matrix         - Pointer to the input matrix.
  * @param chosenElements - Pointer to a pointer of integers, which will be
  *                         allocated and filled with the chosen elements.

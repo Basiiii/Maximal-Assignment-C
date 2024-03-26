@@ -1,8 +1,8 @@
 /**
  *  @file      backtrack.c
  *  @brief     Implementation of the "Backtrack" algorithm.
- *  @details   This file contains the implementation of the "Backtrack" algorithm,
- *             a solution for calculating the maximum possible sum of integers
+ *  @details   This file contains the implementation of the "Backtrack"
+ * algorithm, a solution for calculating the maximum possible sum of integers
  *             from a matrix of integers with any dimensions, so that none of
  *             the selected integers share the same row or column.
  *  @author    Enrique Rodrigues
@@ -18,10 +18,10 @@
 #include "error_codes.h"
 #include "matrix_core.h"
 
- /**
-  * @brief Copy the selected elements to the array.
-  * @param params - Parameters of type `ExploreParams`.
-  */
+/**
+ * @brief Copy the selected elements to the array.
+ * @param params - Parameters of type `ExploreParams`.
+ */
 static void CopySelectedValues(ExploreParams* params) {
   *(params->selectionCount) = 0;
 
@@ -86,15 +86,18 @@ static void Explore(ExploreParams* params) {
 }
 
 /**
- * @brief "Backtrack" algorithm, a solution for calculating the maximum possible sum
- *        of integers from a matrix of integers with any dimensions, so that none
+ * @brief "Backtrack" algorithm, a solution for calculating the maximum possible
+ * sum of integers from a matrix of integers with any dimensions, so that none
  *        of the selected integers share the same row or column.
  * @param matrix                        - The matrix.
  * @param maxSum                        - Maximum total sum possible.
- * @param selectionCount                - Number of elements chosen for the result.
+ * @param selectionCount                - Number of elements chosen for the
+ * result.
  * @param maxSelection                  - Array containing the chosen values.
- * @retval `INVALID_MATRIX_OR_INDICES`  - The matrix or the provided indices are invalid.
- * @retval `MEMORY_ALLOCATION_FAILURE`  - Memory allocation failure for the new matrix element.
+ * @retval `INVALID_MATRIX_OR_INDICES`  - The matrix or the provided indices are
+ * invalid.
+ * @retval `MEMORY_ALLOCATION_FAILURE`  - Memory allocation failure for the new
+ * matrix element.
  * @retval `SUCCESS`                    - Operation successful.
  */
 int BacktrackAlgorithm(Matrix* matrix, int* maxSum, int* selectionCount,
